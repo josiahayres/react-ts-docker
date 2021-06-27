@@ -1,0 +1,14 @@
+# @source: Here’s How You Can Use Docker With React | by Trevor-Indrek Lasn | Better Programming
+version: '3.8'
+services:
+  client:
+    container_name: react-ts-docker
+    stdin_open: true
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - "/app/node_modules"
+      - "./:/app"
